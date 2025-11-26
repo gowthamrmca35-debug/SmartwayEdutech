@@ -4,7 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smartway Edutech</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* GLOBAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f7f7f7;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .logo span {
+            color: #ff5722;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff5722;
+        }
+
+
+        /* SLIDER */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+
+        .caption h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .caption p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e64a19;
+        }
+
+        .fade {
+            animation: fadeEffect 1.5s;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+
+        /* COURSES */
+        .courses {
+            text-align: center;
+            padding: 50px 10%;
+        }
+
+        .courses h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .course-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .course-card {
+            width: 30%;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+
+        /* ABOUT */
+        .about {
+            padding: 50px 10%;
+            text-align: center;
+            background: #fff;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 20px;
+            background: #222;
+            color: #fff;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -21,14 +195,39 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Smart Learning for a Smarter Future</h1>
-            <p>Your smart path to quality learning starts here.</p>
-            <a href="#courses" class="btn">Explore Courses</a>
+
+    <!-- SLIDER SECTION -->
+    <section id="home" class="slider">
+
+        <div class="slide fade">
+            <img src="https://images.unsplash.com/photo-1581091870671-3d3c1e0eac13?auto=format&fit=crop&w=1600&q=60" alt="">
+            <div class="caption">
+                <h1>Smart Learning for a Smarter Future</h1>
+                <p>Your smart path to quality learning starts here.</p>
+                <a href="#courses" class="btn">Explore Courses</a>
+            </div>
         </div>
+
+        <div class="slide fade">
+            <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=1600&q=60" alt="">
+            <div class="caption">
+                <h1>Build Skills for Tomorrow</h1>
+                <p>Learn trending technologies and upgrade your career.</p>
+                <a href="#courses" class="btn">Explore Courses</a>
+            </div>
+        </div>
+
+        <div class="slide fade">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1600&q=60" alt="">
+            <div class="caption">
+                <h1>Learn Anytime, Anywhere</h1>
+                <p>Flexible online courses designed for your success.</p>
+                <a href="#courses" class="btn">Explore Courses</a>
+            </div>
+        </div>
+
     </section>
+
 
     <!-- COURSES SECTION -->
     <section id="courses" class="courses">
@@ -49,15 +248,16 @@
         </div>
     </section>
 
+
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
         <h2>About Us</h2>
         <p>
-            Smartway Edutech is dedicated to providing high-quality and affordable 
-            education. Our mission is to empower learners with skills that help 
-            them succeed in the digital world.
+            Smartway Edutech is dedicated to providing high-quality and affordable education. 
+            Our mission is to empower learners with skills that help them succeed in the digital world.
         </p>
     </section>
+
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact">
@@ -66,10 +266,31 @@
         <p>Phone: <strong>+91 98765 43210</strong></p>
     </section>
 
+
     <!-- FOOTER -->
     <footer>
         <p>© 2025 Smartway Edutech. All rights reserved.</p>
     </footer>
+
+
+
+    <!-- SLIDER SCRIPT -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+            slides.forEach(slide => slide.style.display = "none");
+
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 4000); // 4 seconds per slide
+        }
+    </script>
 
 </body>
 </html>
