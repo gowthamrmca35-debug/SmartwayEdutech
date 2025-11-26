@@ -291,8 +291,25 @@
 
             setTimeout(showSlides, 4000); // 4 seconds per slide
         }
+        // Fade-in animation on scroll
+function revealOnScroll() {
+    const elements = document.querySelectorAll(".course-card, .about, .contact");
+
+    elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (elementTop < screenHeight - 50) {
+            el.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
     </script>
 
 </body>
 </html>
+
 
